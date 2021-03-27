@@ -142,45 +142,48 @@ function remo(buttons){
 
 
 //sempre per la lista
-function change(note,start){
-    console.log("heredso")
-    console.log(note.innerHTML);
-    console.log(LastNote.innerHTML);
-    //note.style.borderColor="green";
-  //appena la nota si ferma viene fatto il confronto fra la nota selezionata dall'utente e quella in uscita dal trombone, qui si cambia il colore del bordo in base al risultato del confronto  
-    if(note.innerHTML==LastNote.innerHTML){
-
-        note.style.borderColor="green";
-        LastNote.classList.add("button-true");
-    }
-    else{
-        note.style.borderColor="red";
-        LastNote.classList.add("button-false");
-    }
-    //funzione per cancellare la nota uscita dal trombone e far partire la successiva
+function change(note,start,time, pause){
     setTimeout(function(){
-        console.log("there")
-        note.remove();
-        note.style.borderColor="black";
-        buttons.forEach(remo);
-        cont3.appendChild(note);
-        start.shift();
-        
-        if(start.length!=0){
+        console.log("heredso")
+        console.log(note.innerHTML);
+        console.log(LastNote.innerHTML);
+        //note.style.borderColor="green";
+        //appena la nota si ferma viene fatto il confronto fra la nota selezionata dall'utente e quella in uscita dal trombone, qui si cambia il colore del bordo in base al risultato del confronto  
+        if(note.innerHTML==LastNote.innerHTML){
 
-            note.innerHTML=start[0];
-            console.log("imhere")
-            click_assignment();
-            note.addEventListener('animationend', change(note,start));
-            
-        } else {
-            console.log("here")
+            note.style.borderColor="green";
+            LastNote.classList.add("button-true");
+        }
+        else{
+            note.style.borderColor="red";
+            LastNote.classList.add("button-false");
+        }
+        //funzione per cancellare la nota uscita dal trombone e far partire la successiva
+        setTimeout(function(){
+            console.log("there")
             note.remove();
-            note.removeEventListener;
+            note.style.borderColor="black";
             buttons.forEach(remo);
-        // Game=false;
-        } 
-    },8000);
+            cont3.appendChild(note);
+            start.shift();
+            
+            if(start.length!=0){
+
+                note.innerHTML=start[0];
+                console.log("imhere")
+                click_assignment();
+                change(note, start,time, pause);
+                
+            } else {
+                console.log("here")
+                note.remove();
+                note.removeEventListener;
+                buttons.forEach(remo);
+            // Game=false;
+            } 
+        },pause*1000);
+    },time * 1000);
+    
 }
 
 //--------------------------------------------------------------------------
@@ -281,6 +284,9 @@ function playingFunc(){
     model = [];
     render();
     note.innerHTML=start[0];
+    time = 5;
+    pause = 2;
     //index=0;
-   note.addEventListener('animationend', change(note,start));
+    //note.addEventListener("animationend", change(note,start));
+    change(note, start, time, pause);
 }
