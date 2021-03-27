@@ -1,0 +1,344 @@
+body{
+  background-color:#4F597A;
+}
+#slidecontainer {
+  position:relative;
+  width: 600px;
+  margin-top:200px;
+  margin-left:400px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: transparent;
+  outline: none;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 55px;
+  background: yellow;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+ width: 10px;
+  height: 55px;
+  background: yellow;
+  cursor: pointer;
+}
+
+
+#len{
+  position:absolute;
+  height:45px;
+  margin-top:-20px;
+  margin-left:-50px;
+  border-radius:5px;
+  border:10px solid yellow;
+  background:transparent;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  pointer-events: none;
+}
+
+
+#cont2 {
+  width: 370px;
+  position:relative;
+  transform: rotate(90deg);
+  top:270px;
+  margin-left:80px;/* Width of the outside container */
+}
+
+/* The slider itself */
+.slider1 {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 20px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  border-radius:10px;
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+.slider1:hover {
+  opacity: 1; 
+}
+
+.slider1::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 40px; /* Slider handle height */
+  border-radius:5px;
+  border: 2px solid black;
+  background: #B01538; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider1::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #4CAF50; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+#notechart{
+  width:688px;
+  height:400px;
+  margin-top:50px;
+  margin-left:355px;
+  margin-bottom:10px;
+  padding:10px;
+  background-color:black;
+  border-radius:10px;
+}
+
+.line {
+  position:relative;
+  width: 100%;
+  height: 80px;
+  background-color: #E5E7EA;
+  /*cursor: pointer;*/
+}
+
+.button {
+  text-align:center;
+  font-size:37px;
+  position:relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: white;
+  border: 7px solid black;
+  margin-right: 24px;
+  margin-bottom:20px;
+  margin-left:10px;
+  margin-top:10px;
+  cursor: pointer;
+}
+
+
+
+p{
+  font-size:30px;
+  position:absolute;
+  width:200px;
+  height:150px;
+  margin-top:190px;
+  margin-left:160px;
+  transform:rotate(270deg);
+}
+
+.selected {
+  background-color: #989BA3;
+}
+
+p1{
+  font-size:30px;
+  position:absolute;
+  width:400px;
+  height:80px;
+  top:260px;
+  margin-left:370px;
+}
+
+.button-true{
+  border-color:#026600;
+}
+.button-false{
+  border-color:#CA1C11;
+}
+
+.smallLine{
+  position:absolute;
+  width:38px;
+  height:10px;
+  margin-top:34px;
+  margin-left:315px;
+  background-color:yellow;
+}
+
+.lip{
+  position:absolute;
+  width:0px;
+  height:0px;
+  margin-top:28px;
+  margin-left:293px;
+  border:11px solid yellow;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-left-color:yellow;
+ }
+.len2{
+  position:absolute;
+  height:60px;
+  width:300px;
+  margin-top:-91px;
+  margin-left:50px;
+  border:10px solid yellow;
+  background:transparent;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-right-color:transparent;
+  pointer-events: none;
+}
+
+.bell{
+  position: absolute;
+  background-color: yellow;
+  top: 50px;
+  left: 260px;
+  height: 120px;
+  width: 290px;
+}  
+  .top-flare{
+    position: absolute;
+    top: 33px;
+    transform:rotate(-3deg);
+    left: 228px;
+    width: 320px;
+    height: 70px;
+    background-color:#4F597A;
+    border-radius: 100px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius:50px;
+  }
+  .bottom-flare{
+    position: absolute;
+    top: 125px;
+    transform:rotate(3deg);
+    left: 228px;
+    width: 320px;
+    height: 70px;
+    background-color:#4F597A;
+    border-radius: 100px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius:50px;
+  }
+
+.mline{
+   position:absolute;
+  width:10px;
+  height:58px;
+  top:122px;
+  margin-left:320px;
+  background-color:yellow;
+}
+
+.mline2{
+   position:absolute;
+  width:10px;
+  height:62px;
+  top:119px;
+  margin-left:180px;
+  background-color:yellow;
+}
+.prov {
+  text-align:center;
+  font-size:37px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: white;
+  border: 7px solid black;
+  border-color:black;
+  position: absolute;
+  top:20px;
+  -webkit-animation: linear;
+  -webkit-animation-name: run;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-fill-mode: forwards;
+}
+@-webkit-keyframes run {
+  0% {
+    left: 0px;
+  }
+  100% {
+    left: 90%;
+    
+   /* background-color: blue;*/
+  }
+
+}
+
+#cont3{
+  position:absolute;
+  left:550px;
+  top:70px;
+  width:800px;
+  height:100px;
+  background-color:blue;
+}
+
+/*-----------------------------------------------------------------*/
+
+.note_el{
+  width: 35px;
+  height: 35px;
+  border-radius: 30%;
+  display: inline-block;
+  background-color: yellow;
+  margin-right: 5px;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  font-size:20px;
+  font-family: 'Helvetica';
+}
+
+#note_to_play_cont{
+  background-color: sky-blue;
+  padding: 15px;
+  border-radius: 5px;
+  width:fit-content;
+}
+
+#buttons_cont{
+  padding:15px;
+  width:fit-content;
+}
+
+#select_notes{
+  width: fit-content;
+  height: fit-content;
+  border-radius: 10px;
+  display: inline-block;
+  background-color: blue;
+  cursor: pointer;
+  font-size:20px;
+  font-family: 'Helvetica';
+  padding: 5px;
+  margin: 5px;
+  color: white;
+}
+
+.pulsante{
+  width: fit-content;
+  height: fit-content;
+  border-radius: 10px;
+  display: inline-block;
+  background-color: blue;
+  cursor: pointer;
+  font-size:20px;
+  font-family: 'Helvetica';
+  padding: 5px;
+  margin: 5px;
+  color: white;
+}
