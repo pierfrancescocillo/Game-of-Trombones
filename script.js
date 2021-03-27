@@ -143,10 +143,8 @@ function remo(buttons){
 
 //sempre per la lista
 function change(note,start,time, pause){
+
     setTimeout(function(){
-        console.log("heredso")
-        console.log(note.innerHTML);
-        console.log(LastNote.innerHTML);
         //note.style.borderColor="green";
         //appena la nota si ferma viene fatto il confronto fra la nota selezionata dall'utente e quella in uscita dal trombone, qui si cambia il colore del bordo in base al risultato del confronto  
         if(note.innerHTML==LastNote.innerHTML){
@@ -160,7 +158,6 @@ function change(note,start,time, pause){
         }
         //funzione per cancellare la nota uscita dal trombone e far partire la successiva
         setTimeout(function(){
-            console.log("there")
             note.remove();
             note.style.borderColor="black";
             buttons.forEach(remo);
@@ -175,21 +172,25 @@ function change(note,start,time, pause){
                 change(note, start,time, pause);
                 
             } else {
-                console.log("here")
+                console.log("Game finished")
                 note.remove();
-                note.removeEventListener;
                 buttons.forEach(remo);
+                boolPlaying = 0;
+                boolSelectionNotes = 1;
+                screen.innerHTML = "GAME OVER";
             // Game=false;
             } 
         },pause*1000);
     },time * 1000);
-    
+
+   
 }
 
 //--------------------------------------------------------------------------
 
 //MODEL
-model = [];
+var model = [];
+var start = [];
 //notes = ["E1", "F1","F#1", "G1","Ab1", "A1", "Bb1", "B1", "C2", "C#2","D2","Eb2", "E2", "F2","F#2", "G2","Ab2", "A2", "Bb2", "B2", "C3", "C#3","D3","Eb3", "E3", "F3"];
 //pos = [7,6,5,4,3,2,1,7,6,5,4,3,2,1,5,4,3,2,1,4,3,2,1,3,2,1];
 //pres = [1,1,1,1,1,1,1,2,2,2,2,2,2,2,3,3,3,3,3,4,4,4,4,5,5,5];
@@ -199,7 +200,7 @@ pres = [1,1,1,1,1,1,1,2,2,2,2,2,2,2,3,3,3,3,3,4,4,4,4,5,5,5];
 
 
 // INTERNAL STATE
-var boolSelectionNotes = 1;
+var boolSelectionNotes = 0;
 var boolPlaying = 0;
 
 function createNoteEl() {
@@ -233,34 +234,43 @@ function click_assignment_selection (key, index) {
 }
 
 function selectNotes(){
-    const buttons_cont = document.getElementById("buttons_cont");
-    const reset_but = createPulsante();
-    buttons_cont.appendChild(reset_but);
-    reset_but.innerHTML = "Reset";
-    const done_but = createPulsante();
-    buttons_cont.appendChild(done_but);
-    done_but.innerHTML = "Done";
-    reset_but.onclick = function(){
-        model = [];
-        render();
-        if(document.getElementById("play_but_cont").lastElementChild){
-            document.getElementById("play_but_cont").removeChild(document.getElementById("play_but_cont").lastElementChild);
+    screen.innerHTML = "Select the notes to create the list of notes you want to play.";
+    if(boolSelectionNotes == 0 && boolPlaying == 0){
+        const buttons_cont = document.getElementById("buttons_cont");
+        const reset_but = createPulsante();
+        buttons_cont.appendChild(reset_but);
+        reset_but.innerHTML = "Reset";
+        const done_but = createPulsante();
+        buttons_cont.appendChild(done_but);
+        done_but.innerHTML = "Done"; 
+        reset_but.onclick = function(){
+            start = [];
+            model = [];
+            render();
+            boolSelectionNotes = 1;
+            boolPlaying = 0;
+            selectNotes();
         }
-        boolSelectionNotes = 1;
-        boolPlaying = 0;
+        done_but.onclick = function(){
+            if(boolPlaying == 0){
+                playingFunc();
+            }
+        }      
     }
-    model = [3,5,6,9,16,4,17,8,9,24,0,2,1];
+
+    boolSelectionNotes = 1;
+
+    
+    model = [3,5];
     render();
     buttons.forEach(click_assignment_selection)
     
-    done_but.onclick = function(){
-        if(boolPlaying == 0){
-            playingFunc();
-        }
-    }
+    
 }
 
 select_notes.onclick = selectNotes;
+screen = document.getElementById("screen");
+screen.innerHTML = "Click on the button 'Select the notes you want to play...' ";
 
 function createPulsante(){
     const button = document.createElement("div");
@@ -269,6 +279,7 @@ function createPulsante(){
 };
 var tht=false;
 function playingFunc(){
+    screen.innerHTML = "Don't miss a note ;) ";
     boolPlaying = 1;
     boolSelectionNotes = 0;
     
@@ -277,7 +288,7 @@ function playingFunc(){
     note.className = "prov";
     var cont3=document.getElementById("cont3");
     cont3.appendChild(note)
-    var start = [];
+    
     for(i=0; i<model.length; i++){
         start[i] = notes[model[i]];    
     }
