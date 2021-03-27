@@ -13,7 +13,7 @@ function onchange(position){
         console.log(leg.style.width);
     }
 }
-var prova=[1,2,3,4,2,3,2,5]
+
 //matrice per settare le posizioni delle note nella tabella
 var modelnote= [[1,1,1,1,1,1,1],
                 [1,1,1,1,1,1,1],
@@ -142,7 +142,8 @@ function remo(buttons){
 
 
 //sempre per la lista
-function change(){
+function change(start,note){
+    console.log("here")
   //appena la nota si ferma viene fatto il confronto fra la nota selezionata dall'utente e quella in uscita dal trombone, qui si cambia il colore del bordo in base al risultato del confronto  
     if(note.innerHTML==LastNote.innerHTML){
 
@@ -254,7 +255,7 @@ function createPulsante(){
     button.classList.add("pulsante");
     return button;
 };
-
+var tht=false;
 function playingFunc(){
     boolPlaying = 1;
     boolSelectionNotes = 0;
@@ -267,13 +268,12 @@ function playingFunc(){
     cont3.appendChild(note)
     var start = [];
     for(i=0; i<model.length; i++){
-        start[i] = notes[model[i]];
+        start[i] = notes[model[i]];    
     }
+    console.log(start);
     model = [];
     render();
     note.innerHTML=start[0];
     //index=0;
-
-    note.addEventListener('animationend', change);
+   note.addEventListener('animationend', change(start,note));
 }
-

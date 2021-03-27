@@ -1,11 +1,15 @@
+
+@import url(https://fonts.googleapis.com/css?family=Passion+One);
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+
 body{
   background-color:#4F597A;
 }
 #slidecontainer {
   position:relative;
-  width: 600px;
+  width: 500px;
   margin-top:200px;
-  margin-left:400px;
+  margin-left:340px;
 }
 
 .slider {
@@ -27,14 +31,15 @@ body{
   -webkit-appearance: none;
   appearance: none;
   width: 10px;
-  height: 55px;
+  height: 50px;
+  margin-top:-40px;
   background: yellow;
   cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
  width: 10px;
-  height: 55px;
+  height: 50px;
   background: yellow;
   cursor: pointer;
 }
@@ -42,9 +47,9 @@ body{
 
 #len{
   position:absolute;
-  height:45px;
-  margin-top:-20px;
-  margin-left:-50px;
+  height:40px;
+  margin-top:-35px;
+  margin-left:-45px;
   border-radius:5px;
   border:10px solid yellow;
   background:transparent;
@@ -55,11 +60,11 @@ body{
 
 
 #cont2 {
-  width: 370px;
+  width: 310px;
   position:relative;
   transform: rotate(90deg);
-  top:270px;
-  margin-left:80px;/* Width of the outside container */
+  top:220px;
+  margin-left:70px;/* Width of the outside container */
 }
 
 /* The slider itself */
@@ -81,14 +86,14 @@ body{
 }
 
 .slider1::-webkit-slider-thumb {
-  -webkit-appearance: none; /* Override default look */
+  -webkit-appearance: none; 
   appearance: none;
-  width: 25px; /* Set a specific slider handle width */
-  height: 40px; /* Slider handle height */
+  width: 25px; 
+  height: 40px; 
   border-radius:5px;
   border: 2px solid black;
-  background: #B01538; /* Green background */
-  cursor: pointer; /* Cursor on hover */
+  background: #B01538; 
+  cursor: pointer; 
 }
 
 .slider1::-moz-range-thumb {
@@ -99,10 +104,10 @@ body{
 }
 
 #notechart{
-  width:688px;
-  height:400px;
-  margin-top:50px;
-  margin-left:355px;
+  width:580px;
+  height:350px;
+  margin-top:25px;
+  margin-left:290px;
   margin-bottom:10px;
   padding:10px;
   background-color:black;
@@ -112,39 +117,51 @@ body{
 .line {
   position:relative;
   width: 100%;
-  height: 80px;
+  height: 70px;
   background-color: #E5E7EA;
   /*cursor: pointer;*/
 }
 
 .button {
-  text-align:center;
-  font-size:37px;
+ 
   position:relative;
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 35px;
   border-radius: 50%;
+  text-align:center;
+  font-size:27px;
   display: inline-block;
   background-color: white;
-  border: 7px solid black;
-  margin-right: 24px;
+  border: 5px solid black;
+  margin-right: 2px;
   margin-bottom:20px;
-  margin-left:10px;
+  margin-left:15px;
   margin-top:10px;
   cursor: pointer;
 }
 
+h{
+  font-size:60px;
+  font-family: 'Lobster';
+  position:absolute;
+  top:15px;
+  left:30px;
+  text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 rgba(255, 255, 255, 0.473);
+}
 
 
 p{
   font-size:30px;
+  font-family: 'Passion One';
   position:absolute;
+  color: white;
   width:200px;
   height:150px;
-  margin-top:190px;
-  margin-left:160px;
+  margin-top:140px;
+  margin-left:225px;
   transform:rotate(270deg);
 }
+
 
 .selected {
   background-color: #989BA3;
@@ -152,10 +169,12 @@ p{
 
 p1{
   font-size:30px;
+  font-family: 'Passion One';
   position:absolute;
+  color:white;
   width:400px;
   height:80px;
-  top:260px;
+  top:235px;
   margin-left:370px;
 }
 
@@ -170,8 +189,8 @@ p1{
   position:absolute;
   width:38px;
   height:10px;
-  margin-top:34px;
-  margin-left:315px;
+  margin-top:15px;
+  margin-left:260px;
   background-color:yellow;
 }
 
@@ -179,8 +198,8 @@ p1{
   position:absolute;
   width:0px;
   height:0px;
-  margin-top:28px;
-  margin-left:293px;
+  margin-top:8px;
+  margin-left:240px;
   border:11px solid yellow;
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
@@ -189,9 +208,9 @@ p1{
 .len2{
   position:absolute;
   height:60px;
-  width:300px;
-  margin-top:-91px;
-  margin-left:50px;
+  width:270px;
+  margin-top:-105px;
+  margin-left:20px;
   border:10px solid yellow;
   background:transparent;
   border-top-left-radius: 50px;
@@ -203,16 +222,16 @@ p1{
 .bell{
   position: absolute;
   background-color: yellow;
-  top: 50px;
-  left: 260px;
+  top: 37px;
+  left: 230px;
   height: 120px;
   width: 290px;
 }  
   .top-flare{
     position: absolute;
-    top: 33px;
+    top: 20px;
     transform:rotate(-3deg);
-    left: 228px;
+    left: 198px;
     width: 320px;
     height: 70px;
     background-color:#4F597A;
@@ -222,9 +241,9 @@ p1{
   }
   .bottom-flare{
     position: absolute;
-    top: 125px;
+    top: 110px;
     transform:rotate(3deg);
-    left: 228px;
+    left: 198px;
     width: 320px;
     height: 70px;
     background-color:#4F597A;
@@ -236,9 +255,9 @@ p1{
 .mline{
    position:absolute;
   width:10px;
-  height:58px;
-  top:122px;
-  margin-left:320px;
+  height:60px;
+  top:105px;
+  margin-left:265px;
   background-color:yellow;
 }
 
@@ -246,8 +265,8 @@ p1{
    position:absolute;
   width:10px;
   height:62px;
-  top:119px;
-  margin-left:180px;
+  top:105px;
+  margin-left:130px;
   background-color:yellow;
 }
 .prov {
@@ -280,8 +299,8 @@ p1{
 
 #cont3{
   position:absolute;
-  left:550px;
-  top:70px;
+  left:520px;
+  top:50px;
   width:800px;
   height:100px;
   background-color:blue;
