@@ -142,8 +142,11 @@ function remo(buttons){
 
 
 //sempre per la lista
-function change(start,note){
-    console.log("here")
+function change(note,start){
+    console.log("heredso")
+    console.log(note.innerHTML);
+    console.log(LastNote.innerHTML);
+    //note.style.borderColor="green";
   //appena la nota si ferma viene fatto il confronto fra la nota selezionata dall'utente e quella in uscita dal trombone, qui si cambia il colore del bordo in base al risultato del confronto  
     if(note.innerHTML==LastNote.innerHTML){
 
@@ -156,6 +159,7 @@ function change(start,note){
     }
     //funzione per cancellare la nota uscita dal trombone e far partire la successiva
     setTimeout(function(){
+        console.log("there")
         note.remove();
         note.style.borderColor="black";
         buttons.forEach(remo);
@@ -163,16 +167,20 @@ function change(start,note){
         start.shift();
         
         if(start.length!=0){
+
             note.innerHTML=start[0];
-                
+            console.log("imhere")
             click_assignment();
+            note.addEventListener('animationend', change(note,start));
+            
         } else {
+            console.log("here")
             note.remove();
             note.removeEventListener;
             buttons.forEach(remo);
         // Game=false;
         } 
-    },2000);
+    },8000);
 }
 
 //--------------------------------------------------------------------------
@@ -238,7 +246,8 @@ function selectNotes(){
         boolSelectionNotes = 1;
         boolPlaying = 0;
     }
-    
+    model = [3,5,6,9,16,4,17,8,9,24,0,2,1];
+    render();
     buttons.forEach(click_assignment_selection)
     
     done_but.onclick = function(){
@@ -264,16 +273,14 @@ function playingFunc(){
     var note = document.createElement('div');
     note.className = "prov";
     var cont3=document.getElementById("cont3");
-    //cop.appendChild(bett);
     cont3.appendChild(note)
     var start = [];
     for(i=0; i<model.length; i++){
         start[i] = notes[model[i]];    
     }
-    console.log(start);
     model = [];
     render();
     note.innerHTML=start[0];
     //index=0;
-   note.addEventListener('animationend', change(start,note));
+   note.addEventListener('animationend', change(note,start));
 }
