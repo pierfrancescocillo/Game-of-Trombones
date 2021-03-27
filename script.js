@@ -13,7 +13,7 @@ function onchange(position){
         console.log(leg.style.width);
     }
 }
-
+var prova=[1,2,3,4,2,3,2,5]
 //matrice per settare le posizioni delle note nella tabella
 var modelnote= [[1,1,1,1,1,1,1],
                 [1,1,1,1,1,1,1],
