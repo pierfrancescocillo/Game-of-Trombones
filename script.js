@@ -144,22 +144,23 @@ var boo=false;
 //sempre per la lista
 function change(note,start,time, pause){
 
-        setTimeout(function(){
-            if(boo==true){
-                return;
-            }
+    setTimeout(function(){
+        if(boo==true){
+            return;
+        }
         //note.style.borderColor="green";
         //appena la nota si ferma viene fatto il confronto fra la nota selezionata dall'utente e quella in uscita dal trombone, qui si cambia il colore del bordo in base al risultato del confronto  
         if(note.innerHTML==LastNote.innerHTML){
 
             note.style.borderColor="green";
             LastNote.classList.add("button-true");
+            playSound(note.innerHTML);
         }
         else{
             note.style.borderColor="red";
             LastNote.classList.add("button-false");
         }
-        //funzione per cancellare la nota uscita dal trombone e far partire la successiva
+            //funzione per cancellare la nota uscita dal trombone e far partire la successiva
         setTimeout(function(){
             if(boo==true){
                 return;
@@ -314,3 +315,9 @@ function playingFunc(){
         change(note, start, time, pause);
     }
 }
+
+function playSound(note) {
+    const sound = new Audio() 
+    sound.src = "sounds/"+note+".wav"; 
+    sound.play() 
+  } 
