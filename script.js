@@ -9,7 +9,7 @@ function onchange(position){
     if(position==0){
         leg.style.width="350px";
     } else {
-        leg.style.width=(100)*position+ 300+"px";
+        leg.style.width=(83)*position+ 350+"px";
         console.log(leg.style.width);
     }
 }
@@ -139,12 +139,15 @@ function remo(buttons){
     buttons.classList.remove("button-false");
 }
 
-
+var boo=false;
 
 //sempre per la lista
 function change(note,start,time, pause){
 
-    setTimeout(function(){
+        setTimeout(function(){
+            if(boo==true){
+                return;
+            }
         //note.style.borderColor="green";
         //appena la nota si ferma viene fatto il confronto fra la nota selezionata dall'utente e quella in uscita dal trombone, qui si cambia il colore del bordo in base al risultato del confronto  
         if(note.innerHTML==LastNote.innerHTML){
@@ -158,6 +161,9 @@ function change(note,start,time, pause){
         }
         //funzione per cancellare la nota uscita dal trombone e far partire la successiva
         setTimeout(function(){
+            if(boo==true){
+                return;
+            }
             note.remove();
             note.style.borderColor="black";
             buttons.forEach(remo);
@@ -182,7 +188,6 @@ function change(note,start,time, pause){
             } 
         },pause*1000);
     },time * 1000);
-
    
 }
 
@@ -197,7 +202,6 @@ var start = [];
 notes = ["Bb1","A1","Ab1","G1","F#1","F1","E1","F2","E2","Eb2","D2","C#2","C2","B1","Bb2","A2","Ab2","G2","F#2","D3","C#3","C3","B2","F3","E3","Eb3"];
 pos = [1,2,3,4,5,6,7,1,2,3,4,5,6,7,1,2,3,4,5,1,2,3,4,1,2,3];
 pres = [1,1,1,1,1,1,1,2,2,2,2,2,2,2,3,3,3,3,3,4,4,4,4,5,5,5];
-
 
 // INTERNAL STATE
 var boolSelectionNotes = 0;
@@ -243,15 +247,21 @@ function selectNotes(){
         const done_but = createPulsante();
         buttons_cont.appendChild(done_but);
         done_but.innerHTML = "Done"; 
+
+        
         reset_but.onclick = function(){
-            start = [];
-            model = [];
+            
+            boo=true;
+            note.remove();
+            start=[];
+            model=[];
             render();
             boolSelectionNotes = 1;
             boolPlaying = 0;
             selectNotes();
         }
         done_but.onclick = function(){
+            boo=false;
             if(boolPlaying == 0){
                 playingFunc();
             }
@@ -277,14 +287,15 @@ function createPulsante(){
     button.classList.add("pulsante");
     return button;
 };
-var tht=false;
+
+var note;
 function playingFunc(){
     screen.innerHTML = "Don't miss a note ;) ";
     boolPlaying = 1;
     boolSelectionNotes = 0;
     
     //per l'animazione della nota che esce dal trombone
-    var note = document.createElement('div');
+  note=document.createElement('div');
     note.className = "prov";
     var cont3=document.getElementById("cont3");
     cont3.appendChild(note)
@@ -299,5 +310,7 @@ function playingFunc(){
     pause = 2;
     //index=0;
     //note.addEventListener("animationend", change(note,start));
-    change(note, start, time, pause);
+    if(boo==false){
+        change(note, start, time, pause);
+    }
 }
