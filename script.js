@@ -159,6 +159,7 @@ function change(note,start,time, pause){
         else{
             note.style.borderColor="red";
             LastNote.classList.add("button-false");
+            playSound("wrong");
         }
             //funzione per cancellare la nota uscita dal trombone e far partire la successiva
         setTimeout(function(){
@@ -272,11 +273,19 @@ function selectNotes(){
     boolSelectionNotes = 1;
 
     
-    model = [3,5];
+    model = [4,11,18,20];
     render();
     buttons.forEach(click_assignment_selection)
     
     
+}
+sound_button.onclick = function(){
+    if (sound_button.classList == "sound_on"){
+      sound_button.innerHTML = "Sound: OFF";
+    }else{
+      sound_button.innerHTML = "Sound: ON";
+    }
+    sound_button.classList.toggle("sound_off");
 }
 
 select_notes.onclick = selectNotes;
@@ -318,6 +327,18 @@ function playingFunc(){
 
 function playSound(note) {
     const sound = new Audio() 
-    sound.src = "sounds/"+note+".wav"; 
-    sound.play() 
-  } 
+    if(note == "F#1"){
+        sound.src = "sounds/Fdies1.wav"; 
+    }else if(note == "F#2"){
+        sound.src = "sounds/Fdies2.wav"; 
+    }else if(note == "C#2"){
+        sound.src = "sounds/Cdies2.wav"; 
+    }else if(note == "C#3"){
+        sound.src = "sounds/Cdies3.wav"; 
+    }else{
+        sound.src = "sounds/"+note+".wav"; 
+    }
+    if(sound_button.classList == "sound_on"){
+        sound.play();
+    }  
+} 

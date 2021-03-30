@@ -379,3 +379,27 @@ p1{
   vertical-align: middle;
   word-wrap: break-word;
 }
+
+#sound_button{
+  display:table;
+  height:15px;
+  position:absolute;
+  margin-left: 70%;
+  margin-top: 500px;
+  color: white;
+  border-radius:5px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.sound_on{
+font-size:15px;
+  font-family: 'Helvetica';
+  background-color:green;
+}
+ 
+.sound_off{
+  font-size:15px;
+  font-family: 'Helvetica';
+  background-color:red;
+}
