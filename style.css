@@ -2,6 +2,29 @@
 @import url(https://fonts.googleapis.com/css?family=Passion+One);
 @import url(https://fonts.googleapis.com/css?family=Lobster);
 
+#change_chart{
+  position:absolute;
+  top:700px;
+  left:500px;
+}
+#cont{
+  position:absolute;
+  top:0px;
+  left:1180px;
+  width:140px;
+  height:45px;
+  background-color:transparent;
+}
+
+.heart {
+  background-image: url(C:/Users/Rebecca/Documents/GitHub/Game-of-Trombones/heart.png);
+  background-size: 100%;
+  display: inline-block;
+  position: relative;
+  height: 45px;
+  width: 45px;
+  top: 0px;
+}
 body{
   background-color:#4F597A;
 }

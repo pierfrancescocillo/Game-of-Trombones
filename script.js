@@ -4,6 +4,32 @@ var slider1=document.getElementById("myRange2");
 var cont=document.getElementById("slidecontainer");
 var leg=document.getElementById('len');
 
+var menu = document.getElementById("change_chart");
+menu.addEventListener("input", generateData);
+var alo=false;
+bot=false;
+mod1();
+function generateData(event) {
+  if (menu.value == '1') {
+      alo=true;
+    console.log("help");
+    mod1();
+  } else if (menu.value == '2') {
+    if(alo){
+    while (cop.firstChild) {
+        cop.removeChild(cop.lastChild);
+      }
+    }
+  } else if (menu.value == '3') {
+    if(alo){
+        while (cop.firstChild) {
+        cop.removeChild(cop.lastChild);
+      }
+    console.log("heck");
+  }
+}
+}
+
 //per cambiare la lunghezza dello slider
 function onchange(position){
     if(position==0){
@@ -140,7 +166,8 @@ function remo(buttons){
 }
 
 var boo=false;
-
+var conta;
+var cop;
 //sempre per la lista
 function change(note,start,time, pause){
 
@@ -160,6 +187,21 @@ function change(note,start,time, pause){
             note.style.borderColor="red";
             LastNote.classList.add("button-false");
             playSound("wrong");
+            if(menu.value==1){
+                console.log(conta)
+                conta=conta-1;
+                cop.lastElementChild.remove();
+                if(conta==0){
+                    boo=true;
+                    screen.innerHTML = "GAME OVER";
+                   //playSound("game_over");
+                    //LastNote.classList.remove("button-false");
+                }
+            }
+            if(menu.value==2){
+                boo=true;
+                screen.innerHTML = "GAME OVER";
+            }
         }
             //funzione per cancellare la nota uscita dal trombone e far partire la successiva
         setTimeout(function(){
@@ -185,7 +227,7 @@ function change(note,start,time, pause){
                 buttons.forEach(remo);
                 boolPlaying = 0;
                 boolSelectionNotes = 1;
-                screen.innerHTML = "GAME OVER";
+                screen.innerHTML = "YOU WIN!";
             // Game=false;
             } 
         },pause*1000);
@@ -260,7 +302,9 @@ function selectNotes(){
             render();
             boolSelectionNotes = 1;
             boolPlaying = 0;
+            generateData();
             selectNotes();
+            LastNote.classList.remove("button-false");
         }
         done_but.onclick = function(){
             boo=false;
@@ -334,7 +378,7 @@ function playSound(note) {
     }else if(note == "C#2"){
         sound.src = "sounds/Cdies2.wav"; 
     }else if(note == "C#3"){
-        sound.src = "sounds/Cdies3.wav"; 
+       sound.src = "sounds/Cdies3.wav"
     }else{
         sound.src = "sounds/"+note+".wav"; 
     }
@@ -342,3 +386,16 @@ function playSound(note) {
         sound.play();
     }  
 } 
+function mod1(){
+    cop=
+    document.getElementById("cont");
+    while (cop.firstChild) {
+        cop.removeChild(cop.lastChild);
+      }
+    for(i=0;i<3;i++){
+    var heart = document.createElement('div');
+    heart.className = "heart";
+    cop.appendChild(heart);
+    conta=3;
+}
+}
