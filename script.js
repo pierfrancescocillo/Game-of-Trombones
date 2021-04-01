@@ -246,6 +246,8 @@ var start = [];
 notes = ["Bb1","A1","Ab1","G1","F#1","F1","E1","F2","E2","Eb2","D2","C#2","C2","B1","Bb2","A2","Ab2","G2","F#2","D3","C#3","C3","B2","F3","E3","Eb3"];
 pos = [1,2,3,4,5,6,7,1,2,3,4,5,6,7,1,2,3,4,5,1,2,3,4,1,2,3];
 pres = [1,1,1,1,1,1,1,2,2,2,2,2,2,2,3,3,3,3,3,4,4,4,4,5,5,5];
+var menu_vel = document.getElementById("velocity");
+
 
 // INTERNAL STATE
 var boolSelectionNotes = 0;
@@ -351,6 +353,19 @@ function playingFunc(){
     //per l'animazione della nota che esce dal trombone
   note=document.createElement('div');
     note.className = "prov";
+    if(menu_vel.value == "2"){
+        note.style.webkitAnimationDuration = "3s";
+        time = 3;
+        pause = 1.5;
+    }else if(menu_vel.value == "3"){
+        note.style.webkitAnimationDuration = "2s";
+        time = 2;
+        pause = 1;
+    }else{
+        time = 5;
+        pause = 2;
+    }
+    
     var cont3=document.getElementById("cont3");
     cont3.appendChild(note)
     
@@ -360,8 +375,7 @@ function playingFunc(){
     model = [];
     render();
     note.innerHTML=start[0];
-    time = 5;
-    pause = 2;
+    
     //index=0;
     //note.addEventListener("animationend", change(note,start));
     if(boo==false){
@@ -397,5 +411,6 @@ function mod1(){
     heart.className = "heart";
     cop.appendChild(heart);
     conta=3;
+    }
 }
-}
+
