@@ -11,22 +11,22 @@ bot=false;
 mod1();
 function generateData(event) {
   if (menu.value == '1') {
-      alo=true;
+     // alo=true;
     console.log("help");
     mod1();
   } else if (menu.value == '2') {
-    if(alo){
+    //if(alo){
     while (cop.firstChild) {
         cop.removeChild(cop.lastChild);
-      }
+      //}
     }
   } else if (menu.value == '3') {
-    if(alo){
+    //if(alo){
         while (cop.firstChild) {
         cop.removeChild(cop.lastChild);
       }
     console.log("heck");
-  }
+  //}
 }
 }
 
@@ -194,6 +194,22 @@ function change(note,start,time, pause){
                 if(conta==0){
                     boo=true;
                     screen.innerHTML = "GAME OVER";
+                    swal({
+                        title: "GAME OVER :(",
+                        button: "Restart",
+                      })
+                      .then((value) => {
+                        boo=true;
+                        note.remove();
+                        start=[];
+                        model=[];
+                        render();
+                        boolSelectionNotes = 1;
+                        boolPlaying = 0;
+                        generateData();
+                        selectNotes();
+                        LastNote.classList.remove("button-false");
+                      });
                    //playSound("game_over");
                     //LastNote.classList.remove("button-false");
                 }
@@ -201,6 +217,22 @@ function change(note,start,time, pause){
             if(menu.value==2){
                 boo=true;
                 screen.innerHTML = "GAME OVER";
+                swal({
+                    title: "GAME OVER :(",
+                    button: "Restart",
+                  })
+                  .then((value) => {
+                    boo=true;
+                    note.remove();
+                    start=[];
+                    model=[];
+                    render();
+                    boolSelectionNotes = 1;
+                    boolPlaying = 0;
+                    generateData();
+                    selectNotes();
+                    LastNote.classList.remove("button-false");
+                  });
             }
         }
             //funzione per cancellare la nota uscita dal trombone e far partire la successiva
@@ -228,12 +260,29 @@ function change(note,start,time, pause){
                 boolPlaying = 0;
                 boolSelectionNotes = 1;
                 screen.innerHTML = "YOU WIN!";
+                swal({
+                    title: "YOU WIN! :)",
+                    button: "Restart",
+                  })
+                  .then((value) => {
+                    boo=true;
+                    note.remove();
+                    start=[];
+                    model=[];
+                    render();
+                    boolSelectionNotes = 1;
+                    boolPlaying = 0;
+                    generateData();
+                    selectNotes();
+                    LastNote.classList.remove("button-false");
+                  });
             // Game=false;
             } 
         },pause*1000);
     },time * 1000);
    
 }
+//swal("hello word")
 
 //--------------------------------------------------------------------------
 
@@ -293,9 +342,8 @@ function selectNotes(){
         const done_but = createPulsante();
         buttons_cont.appendChild(done_but);
         done_but.innerHTML = "Done"; 
-
         
-        reset_but.onclick = function(){
+        reset_but.onclick = function res(){
             
             boo=true;
             note.remove();
@@ -308,7 +356,7 @@ function selectNotes(){
             selectNotes();
             LastNote.classList.remove("button-false");
         }
-        done_but.onclick = function(){
+        done_but.onclick = function done(){
             boo=false;
             if(boolPlaying == 0){
                 playingFunc();
@@ -345,6 +393,7 @@ function createPulsante(){
 };
 
 var note;
+var copy=[];
 function playingFunc(){
     screen.innerHTML = "Don't miss a note ;) ";
     boolPlaying = 1;
@@ -371,7 +420,7 @@ function playingFunc(){
     
     for(i=0; i<model.length; i++){
         start[i] = notes[model[i]];    
-    }
+        }
     model = [];
     render();
     note.innerHTML=start[0];
@@ -414,3 +463,38 @@ function mod1(){
     }
 }
 
+/*swal({
+    title: "GAME OVER :(",
+    buttons: ["Restart","Try Again"]
+})
+  .then((value) => {
+    switch (value) {
+
+        case "Restart":
+         boo=true;
+         note.remove();
+         start=[];
+         model=[];
+         render();
+         boolSelectionNotes = 1;
+         boolPlaying = 0;
+         generateData();
+         selectNotes();
+         LastNote.classList.remove("button-false");
+      break;
+        case "Try Again":
+         
+         for (i = 0; i < numbers.length; i++) {
+         start[i] = copy[i];
+         }
+         boo=false;
+         if(boolPlaying == 0){
+         playingFunc();
+         }
+      break;
+    }
+  )};
+});
+
+
+*/
