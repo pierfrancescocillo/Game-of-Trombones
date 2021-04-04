@@ -91,7 +91,7 @@ line=document.querySelectorAll(".line");
 
 var LastNote;//ultima nota selezionata prima del confronto
 var selected;//nota selezionata
-
+var startAnime=true;
 function click_assignment () {
     //prende i valori degli sliders
     var position= parseInt(document.getElementById("myRange").value);
@@ -393,7 +393,6 @@ function createPulsante(){
 };
 
 var note;
-var copy=[];
 function playingFunc(){
     screen.innerHTML = "Don't miss a note ;) ";
     boolPlaying = 1;

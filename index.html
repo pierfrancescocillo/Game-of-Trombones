@@ -6,19 +6,29 @@
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>     
     </head>
     <body>
+        <div id="settings"><p3>Settings</p3>
+            <p4>Modality:</p4>
         <select id="change_chart">
             <option value="1">Three Hearts</option>
             <option value="2">Survival</option>
             <option value="3">FreePlay</option>
         </select>
+        <p5>Difficoulty:</p5>
         <select id="velocity">
             <option value="1">Easy</option>
             <option value="2">Normal</option>
             <option value="3">Hard</option>
         </select>
+        <div id="buttons_cont">
+            <div id="select_notes"><p7>Click to select the notes you want to play</p7> </div>
+        </div>
+        <p6>Sound: </p6>
+        <div id="sound_button" class="sound_on">Sound: ON</div>
+        <div id="note_to_play_cont"></div>
+
+        </div>
         <div id="cont"></div>
         <div id="screen"></div>
-        <div id="sound_button" class="sound_on">Sound: ON</div>
 
         <div class="bell"></div>
         <div class="top-flare"></div>
@@ -43,12 +53,6 @@
         <div id="cont3"></div>
 
         <!-- ----------------------------------------------------------------------- -->
-
-        <div id="buttons_cont">
-            <div id="select_notes">Select the notes you want to play... </div>
-        </div>
-
-        <div id="note_to_play_cont"></div>
 
 
         <script src="script.js"></script>  

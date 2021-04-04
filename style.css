@@ -2,15 +2,65 @@
 @import url(https://fonts.googleapis.com/css?family=Passion+One);
 @import url(https://fonts.googleapis.com/css?family=Lobster);
 
+#settings{
+  text-align: center;
+  position:absolute;
+  width:380px;
+  height:270px;
+  background-color:grey;
+  border: 5px solid black;
+  top:52%;
+  left:69%;
+}
+p3{
+  font-size:30px;
+  font-family: 'Passion One';
+  color: rgb(12, 10, 10);
+}
+
+p4{
+  position:absolute;
+  top:17%;
+  left:25%;
+  font-size:20px;
+  font-family: 'Passion One';
+  color: rgb(12, 10, 10);
+}
+p5{
+  position:absolute;
+  top:31%;
+  left:25%;
+  font-size:20px;
+  font-family: 'Passion One';
+  color: rgb(12, 10, 10);
+}
+p6{
+  position:absolute;
+  top:45%;
+  left:25%;
+  font-size:20px;
+  font-family: 'Passion One';
+  color: rgb(12, 10, 10);
+}
+p7{
+  font-size:20px;
+  font-family: 'Passion One';
+  color: rgb(12, 10, 10);
+}
+
+
+
 #change_chart{
   position:absolute;
-  top:700px;
-  left:500px;
+  height:25px;
+  top:17%;
+  left:50%;
 }
 #velocity{
   position:absolute;
-  top:720px;
-  left:500px;
+  height:25px;
+  top:30%;
+  left:50%;;
 }
 #cont{
   position:absolute;
@@ -351,7 +401,8 @@ p1{
 }
 
 #note_to_play_cont{
-  background-color: sky-blue;
+  position:relative;
+  top:22%;
   padding: 15px;
   border-radius: 5px;
   width:fit-content;
@@ -363,11 +414,15 @@ p1{
 }
 
 #select_notes{
+  position:absolute;
+  top:60%;
+  left:10%;
   width: fit-content;
   height: fit-content;
   border-radius: 10px;
   display: inline-block;
-  background-color: blue;
+  background-color: white;
+  border:2px solid black;
   cursor: pointer;
   font-size:20px;
   font-family: 'Helvetica';
@@ -377,10 +432,11 @@ p1{
 }
 
 .pulsante{
+  position:relative;
+  top:0px;
   width: fit-content;
   height: fit-content;
   border-radius: 10px;
-  display: inline-block;
   background-color: blue;
   cursor: pointer;
   font-size:20px;
@@ -393,15 +449,15 @@ p1{
 #screen{
   position:absolute;
   width: 400px;
-  height: 300px;
+  height: 50px;
   border-radius: 10px;
   display: inline-block;
   background-color: black;
   font-size:20px;
   font-family: 'Helvetica';
   padding: 0px;
-  margin-left: 70%;
-  margin-top: 200px;
+  margin-left: 68%;
+  margin-top: 75px;
   color: green;
   text-align:center;
   vertical-align: middle;
@@ -412,10 +468,9 @@ p1{
   display:table;
   height:15px;
   position:absolute;
-  margin-left: 70%;
-  margin-top: 500px;
+  left: 50%;
+  top:44%;
   color: white;
-  border-radius:5px;
   cursor: pointer;
   padding: 5px;
 }
