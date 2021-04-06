@@ -11,8 +11,6 @@ bot=false;
 mod1();
 function generateData(event) {
   if (menu.value == '1') {
-     // alo=true;
-    console.log("help");
     mod1();
   } else if (menu.value == '2') {
     //if(alo){
@@ -25,7 +23,6 @@ function generateData(event) {
         while (cop.firstChild) {
         cop.removeChild(cop.lastChild);
       }
-    console.log("heck");
   //}
 }
 }
@@ -194,9 +191,10 @@ function change(note,start,time, pause){
                 if(conta==0){
                     boo=true;
                     screen.innerHTML = "GAME OVER";
+                    playSound("game_over1");
                     swal({
                         title: "GAME OVER :(",
-                        button: "Restart",
+                        button: "Play Again",
                       })
                       .then((value) => {
                         boo=true;
@@ -217,9 +215,10 @@ function change(note,start,time, pause){
             if(menu.value==2){
                 boo=true;
                 screen.innerHTML = "GAME OVER";
+                playSound("game_over1");
                 swal({
                     title: "GAME OVER :(",
-                    button: "Restart",
+                    button: "Play Again",
                   })
                   .then((value) => {
                     boo=true;
@@ -262,7 +261,7 @@ function change(note,start,time, pause){
                 screen.innerHTML = "YOU WIN!";
                 swal({
                     title: "YOU WIN! :)",
-                    button: "Restart",
+                    button: "Play Again",
                   })
                   .then((value) => {
                     boo=true;
@@ -316,7 +315,7 @@ function render(){
     }
 
     for(i = 0 ;i < model.length; i++) {   note_to_play_cont.appendChild(createNoteEl());
-        note_to_play_cont.lastElementChild.style.backgroundColor = 'green';
+       // note_to_play_cont.lastElementChild.style.backgroundColor = 'green';
         note_to_play_cont.lastElementChild.innerHTML = notes[model[i]];
         note_to_play_cont.lastElementChild.style.cursor = 'auto';
     }
@@ -357,6 +356,7 @@ function selectNotes(){
             LastNote.classList.remove("button-false");
         }
         done_but.onclick = function done(){
+            if(model.length==0){return;}
             boo=false;
             if(boolPlaying == 0){
                 playingFunc();
@@ -367,7 +367,7 @@ function selectNotes(){
     boolSelectionNotes = 1;
 
     
-    model = [4,11,18,20];
+    //model = [4,11,18,20];
     render();
     buttons.forEach(click_assignment_selection)
     

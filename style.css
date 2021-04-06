@@ -21,23 +21,23 @@ p3{
 p4{
   position:absolute;
   top:17%;
-  left:25%;
+  left:2%;
   font-size:20px;
   font-family: 'Passion One';
   color: rgb(12, 10, 10);
 }
 p5{
   position:absolute;
-  top:31%;
-  left:25%;
+  top:30%;
+  left:2%;
   font-size:20px;
   font-family: 'Passion One';
   color: rgb(12, 10, 10);
 }
 p6{
   position:absolute;
-  top:45%;
-  left:25%;
+  top:17%;
+  left:59%;
   font-size:20px;
   font-family: 'Passion One';
   color: rgb(12, 10, 10);
@@ -53,14 +53,14 @@ p7{
 #change_chart{
   position:absolute;
   height:25px;
-  top:17%;
-  left:50%;
+  top:16%;
+  left:25%;
 }
 #velocity{
   position:absolute;
   height:25px;
-  top:30%;
-  left:50%;;
+  top:29%;
+  left:25%;;
 }
 #cont{
   position:absolute;
@@ -348,16 +348,15 @@ p1{
   background-color:yellow;
 }
 .prov {
-  text-align:center;
-  font-size:37px;
-  width: 50px;
-  height: 50px;
+  width: 65px;
+  height: 35px;
   border-radius: 50%;
+  text-align:center;
+  font-size:27px;
   background-color: white;
-  border: 7px solid black;
-  border-color:black;
+  border: 5px solid black;
   position: absolute;
-  top:20px;
+  top:25px;
   -webkit-animation: linear;
   -webkit-animation-name: run;
   -webkit-animation-duration: 5s;
@@ -387,11 +386,13 @@ p1{
 /*-----------------------------------------------------------------*/
 
 .note_el{
-  width: 35px;
-  height: 35px;
+  width: fit-content;
+  height: fit-content;
   border-radius: 30%;
   display: inline-block;
-  background-color: yellow;
+  background:#f6f6f6;
+  border: 2px solid black;
+  padding:2px;
   margin-right: 5px;
   cursor: pointer;
   text-align: center;
@@ -402,7 +403,7 @@ p1{
 
 #note_to_play_cont{
   position:relative;
-  top:22%;
+  top:17%;
   padding: 15px;
   border-radius: 5px;
   width:fit-content;
@@ -415,7 +416,7 @@ p1{
 
 #select_notes{
   position:absolute;
-  top:60%;
+  top:42%;
   left:10%;
   width: fit-content;
   height: fit-content;
@@ -433,13 +434,16 @@ p1{
 
 .pulsante{
   position:relative;
-  top:0px;
+  left:170%;
+  top:25px;
+  display:inline-block;
   width: fit-content;
   height: fit-content;
   border-radius: 10px;
-  background-color: blue;
+  background-color: black;
+  border: 1px solid white;
   cursor: pointer;
-  font-size:20px;
+  font-size:15px;
   font-family: 'Helvetica';
   padding: 5px;
   margin: 5px;
@@ -468,8 +472,8 @@ p1{
   display:table;
   height:15px;
   position:absolute;
-  left: 50%;
-  top:44%;
+  left: 74%;
+  top:16%;
   color: white;
   cursor: pointer;
   padding: 5px;
