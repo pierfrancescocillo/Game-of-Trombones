@@ -184,7 +184,8 @@ function change(note,start,time, pause){
             note.style.borderColor="red";
             LastNote.classList.add("button-false");
             playSound("wrong");
-            if(menu.value==1){
+            //if(menu.value==1){
+                if(fixMod==1){
                 console.log(conta)
                 conta=conta-1;
                 cop.lastElementChild.remove();
@@ -204,6 +205,7 @@ function change(note,start,time, pause){
                         render();
                         boolSelectionNotes = 1;
                         boolPlaying = 0;
+                        menu.addEventListener("input", generateData);
                         generateData();
                         selectNotes();
                         LastNote.classList.remove("button-false");
@@ -212,7 +214,8 @@ function change(note,start,time, pause){
                     //LastNote.classList.remove("button-false");
                 }
             }
-            if(menu.value==2){
+            //if(menu.value==2){
+                if(fixMod==2){
                 boo=true;
                 screen.innerHTML = "GAME OVER";
                 playSound("game_over1");
@@ -228,6 +231,7 @@ function change(note,start,time, pause){
                     render();
                     boolSelectionNotes = 1;
                     boolPlaying = 0;
+                    menu.addEventListener("input", generateData);
                     generateData();
                     selectNotes();
                     LastNote.classList.remove("button-false");
@@ -271,6 +275,7 @@ function change(note,start,time, pause){
                     render();
                     boolSelectionNotes = 1;
                     boolPlaying = 0;
+                    menu.addEventListener("input", generateData);
                     generateData();
                     selectNotes();
                     LastNote.classList.remove("button-false");
@@ -330,7 +335,7 @@ function click_assignment_selection (key, index) {
     }
     
 }
-
+var fixMod;
 function selectNotes(){
     screen.innerHTML = "Select the notes to create the list of notes you want to play.";
     if(boolSelectionNotes == 0 && boolPlaying == 0){
@@ -351,12 +356,15 @@ function selectNotes(){
             render();
             boolSelectionNotes = 1;
             boolPlaying = 0;
+            menu.addEventListener("input", generateData);
             generateData();
             selectNotes();
             LastNote.classList.remove("button-false");
         }
         done_but.onclick = function done(){
             if(model.length==0){return;}
+            fixMod=menu.value;
+            menu.removeEventListener("input", generateData);
             boo=false;
             if(boolPlaying == 0){
                 playingFunc();

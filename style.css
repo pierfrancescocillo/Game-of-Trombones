@@ -6,7 +6,7 @@
   text-align: center;
   position:absolute;
   width:380px;
-  height:270px;
+  height:120px;
   background-color:grey;
   border: 5px solid black;
   top:52%;
@@ -20,7 +20,7 @@ p3{
 
 p4{
   position:absolute;
-  top:17%;
+  top:35%;
   left:2%;
   font-size:20px;
   font-family: 'Passion One';
@@ -28,7 +28,7 @@ p4{
 }
 p5{
   position:absolute;
-  top:30%;
+  top:65%;
   left:2%;
   font-size:20px;
   font-family: 'Passion One';
@@ -36,7 +36,7 @@ p5{
 }
 p6{
   position:absolute;
-  top:17%;
+  top:35%;
   left:59%;
   font-size:20px;
   font-family: 'Passion One';
@@ -53,13 +53,13 @@ p7{
 #change_chart{
   position:absolute;
   height:25px;
-  top:16%;
+  top:35%;
   left:25%;
 }
 #velocity{
   position:absolute;
   height:25px;
-  top:29%;
+  top:65%;
   left:25%;;
 }
 #cont{
@@ -402,11 +402,12 @@ p1{
 }
 
 #note_to_play_cont{
-  position:relative;
-  top:17%;
+  position:absolute;
+  top:77%;
+  left:72%;
   padding: 15px;
   border-radius: 5px;
-  width:fit-content;
+  width:300px;
 }
 
 #buttons_cont{
@@ -416,8 +417,8 @@ p1{
 
 #select_notes{
   position:absolute;
-  top:42%;
-  left:10%;
+  top:72%;
+  left:970px;
   width: fit-content;
   height: fit-content;
   border-radius: 10px;
@@ -434,8 +435,8 @@ p1{
 
 .pulsante{
   position:relative;
-  left:170%;
-  top:25px;
+  left:1100px;
+  top:-250px;
   display:inline-block;
   width: fit-content;
   height: fit-content;
@@ -461,7 +462,7 @@ p1{
   font-family: 'Helvetica';
   padding: 0px;
   margin-left: 68%;
-  margin-top: 75px;
+  top: 43%;
   color: green;
   text-align:center;
   vertical-align: middle;
@@ -473,7 +474,7 @@ p1{
   height:15px;
   position:absolute;
   left: 74%;
-  top:16%;
+  top:33%;
   color: white;
   cursor: pointer;
   padding: 5px;
