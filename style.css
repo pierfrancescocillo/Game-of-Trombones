@@ -380,7 +380,9 @@ p1{
   top:50px;
   width:800px;
   height:100px;
-  background-color:blue;
+  background-image: url(C:/Users/Rebecca/Documents/GitHub/Game-of-Trombones/imgs/sheet.jpg);
+  background-size: 100%;
+  /*background-color: rgb(211, 207, 207);*/
 }
 
 /*-----------------------------------------------------------------*/
