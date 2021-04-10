@@ -60,7 +60,7 @@ p7{
   position:absolute;
   height:25px;
   top:65%;
-  left:25%;;
+  left:25%;
 }
 #cont{
   position:absolute;
@@ -72,7 +72,7 @@ p7{
 }
 
 .heart {
-  background-image: url(C:/Users/Rebecca/Documents/GitHub/Game-of-Trombones/heart.png);
+  background-image: url(C:/Users/Rebecca/Documents/GitHub/Game-of-Trombones/imgs/heart.png);
   background-size: 100%;
   display: inline-block;
   position: relative;
@@ -380,11 +380,68 @@ p1{
   top:50px;
   width:800px;
   height:100px;
-  background-image: url(C:/Users/Rebecca/Documents/GitHub/Game-of-Trombones/imgs/sheet.jpg);
+  
+ /* background-image: url(C:/Users/Rebecca/Documents/GitHub/Game-of-Trombones/imgs/lines2.jpg);*/
+  background-color:transparent;
   background-size: 100%;
-  /*background-color: rgb(211, 207, 207);*/
 }
 
+.music_1{
+  width:100%;
+  height:2px;
+  background-color:black;
+  position:relative;
+  top:25px;
+}
+.music_2{
+  width:100%;
+  height:2px;
+  background-color:black;
+  position:relative;
+  /*top:37px;*/
+  top:34px;
+}
+.music_3{
+  width:100%;
+  height:2px;
+  background-color:black;
+  position:relative;
+  /*top: 44px;*/
+  top:43px;
+}
+.music_4{
+  width:100%;
+  height:2px;
+  background-color:black;
+  position:relative;
+  /*top:52px;*/
+  top:52px;
+}
+.music_5{
+  width:100%;
+  height:2px;
+  background-color:black;
+  position:relative;
+  /*top:59px;*/
+  top:61px;
+}
+
+.final_line{
+  width:4px;
+  height:45px;
+  background-color:black;
+  position:relative;
+  top:15px;
+  left:796px;
+}
+.sheetline1{
+  width:2px;
+  height:45px;
+  background-color:black;
+  position:relative;
+  top:-30px;
+  left:790px;
+}
 /*-----------------------------------------------------------------*/
 
 .note_el{
@@ -406,10 +463,10 @@ p1{
 #note_to_play_cont{
   position:absolute;
   top:77%;
-  left:72%;
+  left:73%;
   padding: 15px;
   border-radius: 5px;
-  width:300px;
+  width:290px;
 }
 
 #buttons_cont{
@@ -420,7 +477,7 @@ p1{
 #select_notes{
   position:absolute;
   top:72%;
-  left:970px;
+  left:990px;
   width: fit-content;
   height: fit-content;
   border-radius: 10px;
@@ -457,15 +514,15 @@ p1{
   position:absolute;
   width: 400px;
   height: 50px;
-  border-radius: 10px;
+  border:2px solid white;
   display: inline-block;
   background-color: black;
-  font-size:20px;
+  font-size:15px;
   font-family: 'Helvetica';
   padding: 0px;
   margin-left: 68%;
   top: 43%;
-  color: green;
+  color:white;
   text-align:center;
   vertical-align: middle;
   word-wrap: break-word;

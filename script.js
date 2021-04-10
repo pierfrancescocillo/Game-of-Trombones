@@ -107,46 +107,20 @@ function click_assignment () {
                         selected.classList.add("selected", modelnote[endex][index]);
                         LastNote=selected;
                     }
-                    //questa è stata traslata alla change function alla fine
-                    /*if(note.innerHTML==allnotes[endex][index]){
-                        il bordo della nota diventa verde se c'è corrispondenza fra la nota che esce dal trombone e quella selezionata
-                        selected.classList.add("button-true", modelnote[endex][index]);
-             
-                    } else {
-                        altrimenti il bordo è rosso
-                        selected.classList.add("button-false", modelnote[endex][index]);
-                    }
-                    */ 
                     if((position-1)!=index){
                         //qui si deseleziona la nota nel caso lo slider venga mosso in avanti o indietro
                         selected=line.item(endex).children.item(index);
                         selected.classList.remove("selected", modelnote[endex][index]);
                     }
-                    //questa commentata è stata spostata alla change function alla fine
-                    /*if(note.innerHTML==allnotes[endex][index]){
-                        //si rimuove la classe nel caso fosse true
-                        selected.classList.remove("button-true",modelnote[endex][index]);
-           
-                    } else{
-                        //si rimuove la classe nel caso fosse false
-                        selected.classList.remove("button-false",modelnote[endex][index]);
-                    }*/
                 };
                 if(endex!=pressure-1){
                     //si deseleziona la nota se si cambia lo slider di pressione
                     selected=line.item(endex).children.item(index);
                     selected.classList.remove("selected", modelnote[endex][index]);
-                } //questa commentata è stata traslata nella "change" function alla fine
-                /*if(note.innerHTML==allnotes[endex][index]){
-                    selected.classList.remove("button-true",modelnote[endex][index]);
-           
-                } else {
-                    selected.classList.remove("button-false",modelnote[endex][index]);
-                }*/
+                } 
             };
  
         };
-        //chiamata alla funzione che cambia la lunghezza dello slider del tromobone
     }
   
 };
@@ -252,7 +226,6 @@ function change(note,start,time, pause){
             if(start.length!=0){
 
                 note.innerHTML=start[0];
-                console.log("imhere")
                 click_assignment();
                 change(note, start,time, pause);
                 
@@ -336,8 +309,9 @@ function click_assignment_selection (key, index) {
     
 }
 var fixMod;
+var note;
 function selectNotes(){
-    screen.innerHTML = "Select the notes to create the list of notes you want to play.";
+    screen.innerHTML = "Select the notes to create the list of notes you want to play. When you're done, press 'Play' button.";
     if(boolSelectionNotes == 0 && boolPlaying == 0){
         const buttons_cont = document.getElementById("buttons_cont");
         const reset_but = createPulsante();
@@ -345,12 +319,11 @@ function selectNotes(){
         reset_but.innerHTML = "Reset";
         const done_but = createPulsante();
         buttons_cont.appendChild(done_but);
-        done_but.innerHTML = "Done"; 
+        done_but.innerHTML = "Play!"; 
         
         reset_but.onclick = function res(){
-            
+            if(alo==true){note.remove();}
             boo=true;
-            note.remove();
             start=[];
             model=[];
             render();
@@ -363,6 +336,7 @@ function selectNotes(){
         }
         done_but.onclick = function done(){
             if(model.length==0){return;}
+            alo=true;
             fixMod=menu.value;
             menu.removeEventListener("input", generateData);
             boo=false;
@@ -400,7 +374,7 @@ function createPulsante(){
     return button;
 };
 
-var note;
+
 function playingFunc(){
     screen.innerHTML = "Don't miss a note ;) ";
     boolPlaying = 1;
