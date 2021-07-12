@@ -172,6 +172,7 @@ function change(note,start,time, pause){
                         button: "Play Again",
                       })
                       .then((value) => {
+                        location.reload();
                         boo=true;
                         note.remove();
                         start=[];
@@ -198,6 +199,7 @@ function change(note,start,time, pause){
                     button: "Play Again",
                   })
                   .then((value) => {
+                    location.reload();
                     boo=true;
                     note.remove();
                     start=[];
@@ -241,6 +243,7 @@ function change(note,start,time, pause){
                     button: "Play Again",
                   })
                   .then((value) => {
+                    location.reload();
                     boo=true;
                     note.remove();
                     start=[];
