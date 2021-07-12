@@ -72,7 +72,7 @@ p7{
 }
 
 .heart {
-  background-image: url(C:/Users/Rebecca/Documents/GitHub/Game-of-Trombones/imgs/heart.png);
+  background-image: url(imgs/heart.png);
   background-size: 100%;
   display: inline-block;
   position: relative;
@@ -80,6 +80,7 @@ p7{
   width: 45px;
   top: 0px;
 }
+/*<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>*/
 body{
   background-color:#4F597A;
 }
