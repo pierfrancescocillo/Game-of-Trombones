@@ -210,7 +210,7 @@ function change(note,start,time, pause){
                     playSound("game_over1");
                     swal({
                         title: "GAME OVER :(",
-                        button: "Play Again",
+                        confirmButtonText: 'Play Again',
                       })
                       .then((value) => {
                         location.reload();
@@ -237,7 +237,7 @@ function change(note,start,time, pause){
                 playSound("game_over1");
                 swal({
                     title: "GAME OVER :(",
-                    button: "Play Again",
+                    confirmButtonText: 'Play Again',
                   })
                   .then((value) => {
                     location.reload();
@@ -281,7 +281,7 @@ function change(note,start,time, pause){
                 screen.innerHTML = "YOU WIN!";
                 swal({
                     title: "YOU WIN! :)",
-                    button: "Play Again",
+                    confirmButtonText: 'Play Again',
                   })
                   .then((value) => {
                     location.reload();
