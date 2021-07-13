@@ -1,7 +1,7 @@
 # Game of Trombones
 ## Web-based Game for practicing and memorizing the position of the notes playable by a Trombone in terms of position of the slider and level of insufflation pressure
 
-![](imgs/IMG1.jpeg)
+![](imgs/IMG1.png)
 
 As a project for the Computer Music: Representation and Models course we decided to develope a web-based didactic tool, which emulates the playing pattern of a Trombone. We did it putting the playable notes in a table with the horizontal position of the main slide of the Trombone on the horizontal axis, and the insufflation pressure on the vertical axis, growing downwards.
 
