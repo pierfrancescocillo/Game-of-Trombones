@@ -9,6 +9,8 @@ The user can create a list of the notes he wants to practice to play, and then..
 
 ## Game mode
 
+To set the desired value of the pressure and of the position of the main slider, the user can either use the sliders next to the notes table, using the mouse, or use the keys `z`,`x`,`c`,`v`,`b`,`n` and `m` to set the main slider position from 1 to 7, and `1`,`2`,`3`,`4` and `5` to set the pressure level from 1 to 5. 
+
 By using the **Settings** Interface, the user can set some parameters to customize the game. He can choose the difficulty of the game (*Easy*
 , *Medium* and *Hard*) which will give the user different time windows to choose the correct position of the main slider and the correct insufflation pressure. With a **Sound** button he, will be able to decide to hear, or not, the sound made by the playing Trombone. Finally, with the **Modality** setting, the user is able to choose the desired game mode.
 
