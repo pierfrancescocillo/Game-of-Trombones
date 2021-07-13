@@ -130,6 +130,47 @@ buttons.forEach(click_assignment);
 slider.addEventListener("input", click_assignment);
 slider1.addEventListener("input", click_assignment);
 
+document.onkeydown = function(key){
+
+    if(key.keyCode == 90){ //z
+        document.getElementById("myRange").value = 1;
+        click_assignment(); 
+    }else if(key.keyCode == 88){ //x
+        document.getElementById("myRange").value = 2;
+        click_assignment();
+    }else if(key.keyCode == 67){ //c
+        document.getElementById("myRange").value = 3;
+        click_assignment();
+    }else if(key.keyCode == 86){ //v
+        document.getElementById("myRange").value = 4;
+        click_assignment();
+    }else if(key.keyCode == 66){ //b
+        document.getElementById("myRange").value = 5;
+        click_assignment();
+    }else if(key.keyCode == 78){ //n
+        document.getElementById("myRange").value = 6;
+        click_assignment();
+    }else if(key.keyCode == 77){ //m
+        document.getElementById("myRange").value = 7;
+        click_assignment();
+    }else if(key.keyCode == 49){ //1
+        document.getElementById("myRange2").value = 1;
+        click_assignment();
+    }else if(key.keyCode == 50){ //2
+        document.getElementById("myRange2").value = 2;
+        click_assignment();
+    }else if(key.keyCode == 51){ //3
+        document.getElementById("myRange2").value = 3;
+        click_assignment();
+    }else if(key.keyCode == 52){ //4
+        document.getElementById("myRange2").value = 4;
+        click_assignment();
+    }else if(key.keyCode == 53){ //5
+        document.getElementById("myRange2").value = 5;
+        click_assignment();
+    }
+}
+
 //funzione che rimuove il bordo colorato alla fine del gioco
 function remo(buttons){
     buttons.classList.remove("button-true");
@@ -445,6 +486,7 @@ function mod1(){
     conta=3;
     }
 }
+
 
 /*swal({
     title: "GAME OVER :(",
