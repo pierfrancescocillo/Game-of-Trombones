@@ -26,7 +26,7 @@ The most relaxed mode. This mode is for those who are still not ready for a real
 
 ## Try it!
 
-It is possible to try our game [here](game-of-trombones.surge.sh) thanks to the platform Surge.
+It is possible to try our game [here](http://game-of-trombones.surge.sh/) thanks to the platform Surge.
 
 >Surge: Static web publishing for Front-End Developers. Simple, single-command web publishing. Publish HTML, CSS, and JS for free, without leaving the command line.
 
