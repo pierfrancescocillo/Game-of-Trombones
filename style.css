@@ -51,7 +51,24 @@ p7{
   color: rgb(12, 10, 10);
 }
 
+p8{
+  position:relative;
+  font-size:20px;
+  font-family: 'Passion One';
+  color: rgb(12, 10, 10);
+  left:3%;
+  
+}
 
+
+#explain_box{
+  position: absolute;
+  top:290px;
+  height:310px;
+  width:190px;
+  background-color:white;
+  border:5px solid black;
+}
 
 #change_chart{
   position:relative;
