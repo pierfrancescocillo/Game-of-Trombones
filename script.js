@@ -367,9 +367,8 @@ sound_button.onclick = function(){
     sound_button.classList.toggle("sound_off");
 }
 
-select_notes.onclick = selectNotes;
 screen = document.getElementById("screen");
-screen.innerHTML = "Click on the button 'Select the notes you want to play...' ";
+selectNotes();
 
 function createPulsante(){
     const button = document.createElement("div");
