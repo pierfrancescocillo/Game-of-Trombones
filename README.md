@@ -34,5 +34,5 @@ It is possible to try our game [here](http://game-of-trombones.surge.sh/) thanks
 
 ## Video Demo
 
-It is possible to see a demonstrative video at the following link: 
+It is possible to see a demonstrative video at the following link: https://youtu.be/mZ802DbTyFE
 
